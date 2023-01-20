@@ -26,8 +26,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     # .env ファイル作成
-    -name: generate .env
-      run: chmod +x set-up-env.test.sh && sh set-up-env.text.sh
+    - name: generate .env
+      run: |
+        chmod +x set-up-env.test.sh
+        bash set-up-env.text.sh
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         DEBUG: ${{ secrets.DEBUG }}
