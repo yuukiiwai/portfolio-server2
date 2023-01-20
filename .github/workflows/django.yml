@@ -35,4 +35,5 @@ jobs:
         CORS_ALLOWED_ORIGINS: ${{ secrets.CORS_ALLOWED_ORIGINS }}
     - name: Run Tests
       run: |
-        python3 portfolio/manage.py test
+        cd portfolio
+        python3 manage.py test
