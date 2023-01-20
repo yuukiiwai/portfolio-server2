@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
     # .env ファイル作成
     -name: generate .env
-      run: chmod +x set-up-env.test.sh && set-up-env.text.sh
+      run: chmod +x set-up-env.test.sh && sh set-up-env.text.sh
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         DEBUG: ${{ secrets.DEBUG }}
