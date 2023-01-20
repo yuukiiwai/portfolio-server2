@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Django
 echo "SECRET_KEY=$SECRET_KEY" >> .env
 echo "DEBUG=$DEBUG" >> .env
