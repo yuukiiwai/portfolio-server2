@@ -1,6 +1,5 @@
 db.sqlite3
 user.txt
-secret.py
 .ev/
 __pycache__/
 .env
