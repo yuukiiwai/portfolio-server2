@@ -10,10 +10,10 @@ STUDYSTATE = [
 
 class Studystate(models.Model):
     state = models.CharField(verbose_name="学習状況",choices=STUDYSTATE,max_length=16)
-    language = models.CharField(max_length=32)
+    tech = models.CharField(max_length=32)
     imgurl = models.URLField(max_length=2048)
     def __str__(self) -> str:
-        return self.language + ":" + self.state
+        return self.tech + ":" + self.state
 
 class Strong(models.Model):
     strong = models.CharField(max_length=25)

@@ -85,24 +85,24 @@ class IndexViewSetTests(APITestCase):
     
     def test_studystate_encode(self):
         # data make
-        s1 = Studystate.objects.create(state=STUDYSTATE[0][0],language="c",imgurl="http://a.com")
-        s2 = Studystate.objects.create(state=STUDYSTATE[0][0],language="c++",imgurl="http://b.com")
-        s3 = Studystate.objects.create(state=STUDYSTATE[1][0],language="c#",imgurl="http://c.com")
-        s4 = Studystate.objects.create(state=STUDYSTATE[1][0],language="java",imgurl="http://d.com")
-        s5 = Studystate.objects.create(state=STUDYSTATE[2][0],language="python",imgurl="http://e.com")
-        s6 = Studystate.objects.create(state=STUDYSTATE[2][0],language="rust",imgurl="http://f.com")
+        s1 = Studystate.objects.create(state=STUDYSTATE[0][0],tech="c",imgurl="http://a.com")
+        s2 = Studystate.objects.create(state=STUDYSTATE[0][0],tech="c++",imgurl="http://b.com")
+        s3 = Studystate.objects.create(state=STUDYSTATE[1][0],tech="c#",imgurl="http://c.com")
+        s4 = Studystate.objects.create(state=STUDYSTATE[1][0],tech="java",imgurl="http://d.com")
+        s5 = Studystate.objects.create(state=STUDYSTATE[2][0],tech="python",imgurl="http://e.com")
+        s6 = Studystate.objects.create(state=STUDYSTATE[2][0],tech="rust",imgurl="http://f.com")
         expected = json.dumps({
             "will":[
-                {"imgurl":s1.imgurl},
-                {"imgurl":s2.imgurl}
+                {"imgurl":s1.imgurl,"tech":s1.tech},
+                {"imgurl":s2.imgurl,"tech":s2.tech}
             ],
             "ing":[
-                {"imgurl":s3.imgurl},
-                {"imgurl":s4.imgurl}
+                {"imgurl":s3.imgurl,"tech":s3.tech},
+                {"imgurl":s4.imgurl,"tech":s4.tech}
             ],
             "can":[
-                {"imgurl":s5.imgurl},
-                {"imgurl":s6.imgurl}
+                {"imgurl":s5.imgurl,"tech":s5.tech},
+                {"imgurl":s6.imgurl,"tech":s6.tech}
             ]
         }).replace(" ","")
         # access
