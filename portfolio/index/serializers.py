@@ -23,7 +23,7 @@ class StudystateSerializer(serializers.ModelSerializer):
     class Meta:
         list_serializer_class = _StudystatesSerializer
         model = Studystate
-        fields = ["imgurl"]
+        fields = ["imgurl","tech"]
 
 class StrongSerializer(serializers.ModelSerializer):
     exps = serializers.StringRelatedField(many=True)
